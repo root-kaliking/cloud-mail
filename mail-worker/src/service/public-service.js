@@ -28,8 +28,8 @@ const publicService = {
     let { toEmail, content, subject, sendName, sendEmail, timeSort, num, size, type, isDel: emailIsDel } = params;
     const query = orm(c).select({
       emailId: email.emailId,
-      sendEmail: email.sendEmail,
       sendName: email.name,
+      sendEmail: email.sendEmail,
       subject: email.subject,
       toEmail: email.toEmail,
       toName: email.toName,
@@ -37,7 +37,7 @@ const publicService = {
       createTime: email.createTime,
       content: email.content,
       text: email.text,
-      isDel: email.isDel,
+      isDel: email.isDel
     }).from(email);
 
     if (!size) size = 20;
